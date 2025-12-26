@@ -49,6 +49,8 @@ export const StatusColors = {
   destructive: '#ef4444', // hsl(0, 84%, 60%)
   destructiveForeground: '#ffffff',
   destructiveLight: '#fee2e2', // hsl(0, 84%, 95%)
+  orange: '#f97316', // Orange color for in-progress/loaded status
+  orangeLight: '#ffedd5', // Light orange background
 } as const;
 
 // Neutral / Gray Colors

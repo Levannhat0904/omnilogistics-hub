@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@shared/components/themed-text';
 import { Card } from '@shared/components/ui/card';
-import { NeutralColors, PrimaryColors } from '@shared/constants/colors';
+import { NeutralColors, PrimaryColors, StatusColors } from '@shared/constants/colors';
 import { Radius, Spacing } from '@shared/constants/layout';
 
 interface StatsRowProps {
@@ -24,7 +24,7 @@ export function StatsRow({ completedTrips, onTimeRate, rating }: StatsRowProps) 
         </ThemedText>
       </Card>
       <Card style={styles.statCard}>
-        <ThemedText type="title" style={[styles.statValue, { color: '#16a34a' }]}>
+        <ThemedText type="title" style={[styles.statValue, { color: StatusColors.success }]}>
           {onTimeRate}%
         </ThemedText>
         <ThemedText type="caption" style={styles.statLabel}>
@@ -32,7 +32,7 @@ export function StatsRow({ completedTrips, onTimeRate, rating }: StatsRowProps) 
         </ThemedText>
       </Card>
       <Card style={styles.statCard}>
-        <ThemedText type="title" style={[styles.statValue, { color: '#f59e0b' }]}>
+        <ThemedText type="title" style={[styles.statValue, { color: StatusColors.warning }]}>
           {rating}
         </ThemedText>
         <ThemedText type="caption" style={styles.statLabel}>

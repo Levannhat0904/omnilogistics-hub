@@ -15,6 +15,8 @@ import {
     ViewStyle,
 } from 'react-native';
 
+import { Colors, NeutralColors, PrimaryColors } from '@shared/constants/colors';
+
 type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost';
 type ButtonSize = 'small' | 'medium' | 'large';
 
@@ -129,10 +131,10 @@ export const Button: React.FC<ButtonProps> = ({
     const iconColor =
       textColor ||
       (variant === 'primary' || variant === 'secondary'
-        ? '#fff'
+        ? Colors.white
         : variant === 'outline' || variant === 'ghost'
-        ? '#7c3aed'
-        : '#0f172a');
+        ? PrimaryColors.primary
+        : Colors.foreground);
 
     return (
       <Ionicons
@@ -153,7 +155,7 @@ export const Button: React.FC<ButtonProps> = ({
     >
       {loading ? (
         <ActivityIndicator
-          color={variant === 'primary' || variant === 'secondary' ? '#fff' : '#7c3aed'}
+          color={variant === 'primary' || variant === 'secondary' ? Colors.white : PrimaryColors.primary}
         />
       ) : (
         <>
@@ -172,7 +174,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    shadowColor: '#7c3aed',
+    shadowColor: PrimaryColors.primary,
     shadowOffset: {
       width: 0,
       height: 4,
@@ -199,15 +201,15 @@ const styles = StyleSheet.create({
   },
   // Variants
   primary: {
-    backgroundColor: '#7c3aed',
+    backgroundColor: PrimaryColors.primary,
   },
   secondary: {
-    backgroundColor: '#64748b',
+    backgroundColor: NeutralColors.gray500,
   },
   outline: {
     backgroundColor: 'transparent',
     borderWidth: 1,
-    borderColor: '#7c3aed',
+    borderColor: PrimaryColors.primary,
   },
   ghost: {
     backgroundColor: 'transparent',
@@ -226,16 +228,16 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   primaryText: {
-    color: '#fff',
+    color: Colors.white,
   },
   secondaryText: {
-    color: '#fff',
+    color: Colors.white,
   },
   outlineText: {
-    color: '#7c3aed',
+    color: PrimaryColors.primary,
   },
   ghostText: {
-    color: '#7c3aed',
+    color: PrimaryColors.primary,
   },
   // States
   disabled: {

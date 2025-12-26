@@ -3,26 +3,29 @@ import React from 'react';
 import { TabBar as SharedTabBar, type TabItem } from '@shared/components/ui';
 import { Spacing } from '@shared/constants/layout';
 
-export type TabType = 'pending' | 'history';
+export type TabType = 'today' | 'history' | 'calendar';
 
 interface TabBarProps {
   activeTab: TabType;
   onTabChange: (tab: TabType) => void;
-  pendingCount?: number;
 }
 
-export function TabBar({ activeTab, onTabChange, pendingCount = 0 }: TabBarProps) {
+export const TabBar: React.FC<TabBarProps> = ({ activeTab, onTabChange }) => {
   const tabs: TabItem<TabType>[] = [
     {
-      key: 'pending',
-      label: 'Chưa nộp',
-      icon: 'document-text-outline',
-      count: pendingCount,
+      key: 'today',
+      label: 'Hôm nay',
+      icon: 'car-outline',
     },
     {
       key: 'history',
       label: 'Lịch sử',
-      icon: 'cash-outline',
+      icon: 'time-outline',
+    },
+    {
+      key: 'calendar',
+      label: 'Lịch',
+      icon: 'calendar-outline',
     },
   ];
 
@@ -31,7 +34,7 @@ export function TabBar({ activeTab, onTabChange, pendingCount = 0 }: TabBarProps
       tabs={tabs}
       activeTab={activeTab}
       onTabChange={onTabChange}
-      gap={Spacing.lg}
+      gap={Spacing.xl}
     />
   );
-}
+};

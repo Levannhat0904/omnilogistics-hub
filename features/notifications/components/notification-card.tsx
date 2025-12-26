@@ -3,7 +3,7 @@ import { StyleSheet, TouchableOpacity, View } from 'react-native';
 
 import { Ionicons } from '@expo/vector-icons';
 import { ThemedText } from '@shared/components/themed-text';
-import { NeutralColors, PrimaryColors, StatusColors } from '@shared/constants/colors';
+import { BackgroundColors, NeutralColors, PrimaryColors, StatusColors } from '@shared/constants/colors';
 import { IconSize, Radius, Spacing } from '@shared/constants/layout';
 
 export type NotificationType = 'shipment' | 'payment' | 'reminder' | 'route';
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   cardUnread: {
-    backgroundColor: '#fefefe',
+    backgroundColor: BackgroundColors.card,
     shadowOpacity: 0.08,
     shadowRadius: 12,
     elevation: 4,

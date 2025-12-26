@@ -3,7 +3,7 @@
  * UI theo thiết kế TMS Pro
  */
 
-import { PrimaryColors } from '@/shared/constants/colors';
+import { BackgroundColors, Colors, NeutralColors, PrimaryColors } from '@/shared/constants/colors';
 import { Ionicons } from '@expo/vector-icons';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@shared/components/ui/button';
@@ -127,14 +127,15 @@ export const LoginScreen = () => {
             backgroundColor={primary}
             fullWidth
           />
+          {/* Footer */}
+          <View style={styles.footer}>
+            <Text style={styles.copyright}>
+              © 2024 TMS Pro. All rights reserved.
+            </Text>
+          </View>
         </View>
 
-        {/* Footer */}
-        <View style={styles.footer}>
-          <Text style={styles.copyright}>
-            © 2024 TMS Pro. All rights reserved.
-          </Text>
-        </View>
+
       </ScrollView>
     </KeyboardAvoidingView>
   );
@@ -143,13 +144,13 @@ export const LoginScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: BackgroundColors.card,
   },
   scrollContent: {
     flexGrow: 1,
   },
   header: {
-    backgroundColor: '#7c3aed', // Purple
+    backgroundColor: PrimaryColors.primary,
     paddingTop: Platform.OS === 'ios' ? 60 : 40,
     paddingBottom: 40,
     paddingHorizontal: 20,
@@ -172,7 +173,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   formCard: {
-    backgroundColor: '#fff',
+    flex: 1,
+    backgroundColor: BackgroundColors.card,
     marginTop: -20,
     borderTopLeftRadius: 24,
     borderTopRightRadius: 24,
@@ -191,7 +193,7 @@ const styles = StyleSheet.create({
   formTitle: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#0f172a',
+    color: Colors.foreground,
     marginBottom: 24,
   },
   forgotPasswordContainer: {
@@ -203,12 +205,16 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   footer: {
+    position: 'absolute',
+    bottom: 20,
+    left: 0,
+    right: 0,
     paddingVertical: 24,
     alignItems: 'center',
   },
   copyright: {
     fontSize: 12,
-    color: '#94a3b8',
+    color: NeutralColors.gray400,
   },
 });
 

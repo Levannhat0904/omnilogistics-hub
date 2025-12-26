@@ -15,6 +15,8 @@ import {
     View,
 } from 'react-native';
 
+import { BorderColors, Colors, NeutralColors, SecondaryColors, StatusColors } from '@shared/constants/colors';
+
 interface InputProps extends Omit<TextInputProps, 'style'> {
   label?: string;
   icon?: keyof typeof Ionicons.glyphMap;
@@ -50,13 +52,13 @@ export const Input: React.FC<InputProps> = ({
           <Ionicons
             name={icon}
             size={20}
-            color="#64748b"
+            color={NeutralColors.gray500}
             style={styles.inputIcon}
           />
         )}
         <TextInput
           style={styles.input}
-          placeholderTextColor="#94a3b8"
+          placeholderTextColor={NeutralColors.gray400}
           secureTextEntry={isPassword ? !showPassword : secureTextEntry}
           editable={!disabled}
           {...textInputProps}
@@ -70,7 +72,7 @@ export const Input: React.FC<InputProps> = ({
             <Ionicons
               name={showPassword ? 'eye-outline' : 'eye-off-outline'}
               size={20}
-              color="#64748b"
+              color={NeutralColors.gray500}
             />
           </TouchableOpacity>
         )}
@@ -117,20 +119,20 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 14,
     fontWeight: '600',
-    color: '#0f172a',
+    color: Colors.foreground,
     marginBottom: 8,
   },
   inputWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#f1f5f9',
+    backgroundColor: SecondaryColors.secondary,
     borderRadius: 12,
     borderWidth: 1,
-    borderColor: '#e2e8f0',
+    borderColor: BorderColors.border,
     paddingHorizontal: 12,
   },
   inputWrapperError: {
-    borderColor: '#ef4444',
+    borderColor: StatusColors.destructive,
   },
   inputIcon: {
     marginRight: 12,
@@ -138,7 +140,7 @@ const styles = StyleSheet.create({
   input: {
     flex: 1,
     fontSize: 16,
-    color: '#0f172a',
+    color: Colors.foreground,
     paddingVertical: 14,
     paddingRight: 12,
   },
@@ -146,7 +148,7 @@ const styles = StyleSheet.create({
     padding: 4,
   },
   errorText: {
-    color: '#ef4444',
+    color: StatusColors.destructive,
     fontSize: 12,
     marginTop: 6,
     marginLeft: 4,

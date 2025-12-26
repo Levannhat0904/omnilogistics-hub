@@ -1,5 +1,6 @@
 import { StyleSheet, Text, type TextProps } from 'react-native';
 
+import { NeutralColors, StatusColors } from '@shared/constants/colors';
 import { useThemeColor } from '@shared/hooks/use-theme-color';
 
 export type ThemedTextProps = TextProps & {
@@ -53,11 +54,11 @@ const styles = StyleSheet.create({
   link: {
     lineHeight: 20,
     fontSize: 16,
-    color: '#0a7ea4',
+    color: StatusColors.info,
   },
   caption: {
     fontSize: 12,
-    color: '#64748b', // mutedForeground is hardcoded here since we don't import Colors yet, but based on inspection it was #64748b
+    color: NeutralColors.gray500,
   },
   value: {
     fontSize: 18,

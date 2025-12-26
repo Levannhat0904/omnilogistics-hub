@@ -4,6 +4,7 @@
  * Redirect đến login nếu chưa đăng nhập
  */
 
+import { BackgroundColors, PrimaryColors } from '@shared/constants/colors';
 import { isAuthenticated } from '@shared/lib/auth-storage';
 import { useRouter } from 'expo-router';
 import React, { useCallback, useEffect, useState } from 'react';
@@ -43,7 +44,7 @@ export const AuthGuard: React.FC<AuthGuardProps> = ({ children }) => {
   if (isChecking) {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#7c3aed" />
+        <ActivityIndicator size="large" color={PrimaryColors.primary} />
       </View>
     );
   }
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: BackgroundColors.card,
   },
 });
 

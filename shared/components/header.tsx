@@ -1,4 +1,4 @@
-import { PrimaryColors } from '@/shared/constants/colors';
+import { Colors, PrimaryColors } from '@/shared/constants/colors';
 import React from 'react';
 import { StatusBar, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -42,12 +42,12 @@ const styles = StyleSheet.create({
     marginRight: 12,
   },
   iconText: {
-    color: '#ffffff',
+    color: Colors.white,
     fontSize: 20,
     fontWeight: 'bold',
   },
   title: {
-    color: '#ffffff',
+    color: Colors.white,
     fontSize: 20,
     fontWeight: 'bold',
     letterSpacing: 1,

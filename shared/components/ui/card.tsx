@@ -3,7 +3,7 @@
  * Reusable card component với shadow và elevation nhất quán
  */
 
-import { BackgroundColors } from '@shared/constants/colors';
+import { BackgroundColors, BorderColors } from '@shared/constants/colors';
 import React from 'react';
 import {
     StyleSheet,
@@ -112,7 +112,7 @@ const styles = StyleSheet.create({
   },
   outlined: {
     borderWidth: 1,
-    borderColor: '#e2e8f0',
+    borderColor: BorderColors.border,
   },
 });
 
