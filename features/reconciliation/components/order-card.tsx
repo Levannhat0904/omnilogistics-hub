@@ -6,6 +6,7 @@ import { ThemedText } from '@shared/components/themed-text';
 import { Card } from '@shared/components/ui/card';
 import { InteractiveColors, NeutralColors, PrimaryColors } from '@shared/constants/colors';
 import { IconSize, Radius, Spacing } from '@shared/constants/layout';
+import { formatCurrency } from '@shared/utils';
 
 export interface Order {
   code: string;
@@ -20,7 +21,7 @@ interface OrderCardProps {
   order: Order;
 }
 
-const formatCurrency = (value: number) => `${value.toLocaleString('vi-VN')} đ`;
+
 
 export function OrderCard({ order }: OrderCardProps) {
   return (

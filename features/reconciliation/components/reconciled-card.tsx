@@ -6,13 +6,14 @@ import { ThemedText } from '@shared/components/themed-text';
 import { Card } from '@shared/components/ui/card';
 import { BackgroundColors, StatusColors } from '@shared/constants/colors';
 import { IconSize, Radius, Spacing } from '@shared/constants/layout';
+import { formatCurrency } from '@shared/utils';
 
 interface ReconciledCardProps {
   amount: number;
   cycleCount: number;
 }
 
-const formatCurrency = (value: number) => `${value.toLocaleString('vi-VN')} đ`;
+
 
 export function ReconciledCard({ amount, cycleCount }: ReconciledCardProps) {
   return (

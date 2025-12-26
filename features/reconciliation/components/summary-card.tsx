@@ -6,6 +6,7 @@ import { ThemedText } from '@shared/components/themed-text';
 import { Card } from '@shared/components/ui/card';
 import { StatusColors } from '@shared/constants/colors';
 import { IconSize, Radius, Spacing } from '@shared/constants/layout';
+import { formatCurrency } from '@shared/utils';
 
 interface SummaryCardProps {
   type: 'warning' | 'info';
@@ -14,7 +15,7 @@ interface SummaryCardProps {
   amount: number;
 }
 
-const formatCurrency = (value: number) => `${value.toLocaleString('vi-VN')} đ`;
+
 
 export function SummaryCard({ type, icon, label, amount }: SummaryCardProps) {
   const color = type === 'warning' ? StatusColors.warning : StatusColors.info;

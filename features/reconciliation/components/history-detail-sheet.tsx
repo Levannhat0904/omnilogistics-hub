@@ -5,6 +5,7 @@ import { ThemedText } from '@shared/components/themed-text';
 import { BottomSheet } from '@shared/components/ui/bottom-sheet';
 import { BorderColors, NeutralColors, PrimaryColors, StatusColors } from '@shared/constants/colors';
 import { Radius, Spacing } from '@shared/constants/layout';
+import { formatCurrency } from '@shared/utils';
 
 import { type HistoryRecord } from './history-card';
 
@@ -14,7 +15,7 @@ interface HistoryDetailSheetProps {
   record: HistoryRecord | null;
 }
 
-const formatCurrency = (value: number) => `${value.toLocaleString('vi-VN')} đ`;
+
 
 const STATUS_LABELS: Record<HistoryRecord['status'], string> = {
   approved: 'Đã duyệt',

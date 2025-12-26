@@ -8,6 +8,10 @@ import { Header } from '@shared/components/header';
 import { IconSymbol } from '@shared/components/ui/icon-symbol';
 import { useColorScheme } from '@shared/hooks/use-color-scheme';
 
+export const unstable_settings = {
+  initialRouteName: '(shipments)',
+};
+
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 

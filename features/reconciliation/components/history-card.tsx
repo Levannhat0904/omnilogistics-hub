@@ -6,6 +6,7 @@ import { ThemedText } from '@shared/components/themed-text';
 import { Card } from '@shared/components/ui/card';
 import { NeutralColors, PrimaryColors, StatusColors } from '@shared/constants/colors';
 import { IconSize, Radius, Spacing } from '@shared/constants/layout';
+import { formatCurrency } from '@shared/utils';
 
 export interface HistoryRecord {
   id: string;
@@ -21,7 +22,7 @@ interface HistoryCardProps {
   onPress?: () => void;
 }
 
-const formatCurrency = (value: number) => `${value.toLocaleString('vi-VN')} đ`;
+
 
 export function HistoryCard({ record, onPress }: HistoryCardProps) {
   return (

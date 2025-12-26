@@ -6,6 +6,7 @@ import { ThemedView } from '@shared/components/themed-view';
 import { Button } from '@shared/components/ui/button';
 import { Colors, NeutralColors } from '@shared/constants/colors';
 import { Spacing } from '@shared/constants/layout';
+import { formatCurrency } from '@shared/utils';
 
 import {
   type HistoryRecord,
@@ -76,7 +77,7 @@ const historyRecords: HistoryRecord[] = [
   },
 ];
 
-const formatCurrency = (value: number) => `${value.toLocaleString('vi-VN')} đ`;
+
 
 export default function ReconciliationPage() {
   const [activeTab, setActiveTab] = useState<TabType>('pending');

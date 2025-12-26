@@ -8,7 +8,7 @@ import { QueryProvider } from '@shared/api';
 import { useColorScheme } from '@shared/hooks/use-color-scheme';
 
 export const unstable_settings = {
-  anchor: '(tabs)',
+  initialRouteName: '(tabs)',
 };
 
 export default function RootLayout() {
