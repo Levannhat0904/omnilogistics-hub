@@ -4,6 +4,7 @@ import React from 'react';
 import { Colors } from '@/shared/constants/theme';
 import { AuthGuard } from '@shared/components/auth-guard';
 import { HapticTab } from '@shared/components/haptic-tab';
+import { Header } from '@shared/components/header';
 import { IconSymbol } from '@shared/components/ui/icon-symbol';
 import { useColorScheme } from '@shared/hooks/use-color-scheme';
 
@@ -15,7 +16,8 @@ export default function TabLayout() {
       <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
+        headerShown: true,
+        header: () => <Header />,
         tabBarButton: HapticTab,
         tabBarLabelStyle: {
           fontSize: 13, // Font size cho tab bar title

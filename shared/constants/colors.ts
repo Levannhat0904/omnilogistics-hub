@@ -48,6 +48,30 @@ export const StatusColors = {
   infoLight: '#e0f2fe', // hsl(199, 89%, 95%)
   destructive: '#ef4444', // hsl(0, 84%, 60%)
   destructiveForeground: '#ffffff',
+  destructiveLight: '#fee2e2', // hsl(0, 84%, 95%)
+} as const;
+
+// Neutral / Gray Colors
+export const NeutralColors = {
+  gray50: '#f8fafc',
+  gray100: '#f1f5f9',
+  gray200: '#e2e8f0',
+  gray300: '#cbd5e1',
+  gray400: '#94a3b8',
+  gray500: '#64748b',
+  gray600: '#475569',
+  gray700: '#334155',
+  gray800: '#1e293b',
+  gray900: '#0f172a',
+  white: '#ffffff',
+  black: '#000000',
+} as const;
+
+// Tab & Interactive Colors
+export const InteractiveColors = {
+  tabInactive: '#eef2f6',
+  tabActive: '#f3e8ff',
+  indigoLight: '#eef2ff',
 } as const;
 
 // Borders & Inputs
@@ -81,6 +105,8 @@ export const Colors = {
   ...SecondaryColors,
   ...AccentColors,
   ...StatusColors,
+  ...NeutralColors,
+  ...InteractiveColors,
   ...BorderColors,
   dark: DarkModeColors,
 } as const;

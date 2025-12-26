@@ -135,6 +135,19 @@ apiClient.interceptors.request.use(
       }
     }
 
+    // Log network requests in development mode
+    if (__DEV__) {
+      console.log(
+        `[API Request] ${config.method?.toUpperCase()} ${config.url}`,
+        {
+          baseURL: config.baseURL,
+          headers: config.headers,
+          params: config.params,
+          data: config.data,
+        }
+      );
+    }
+
     return config;
   },
   (error) => {
