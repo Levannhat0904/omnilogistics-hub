@@ -19,9 +19,22 @@ export const PUBLIC_ENDPOINTS = [
 
 /**
  * Kiểm tra xem một endpoint có phải là public endpoint không
+ * Chỉ match chính xác endpoint hoặc endpoint với query params
+ * Ví dụ: /sessions là public, nhưng /sessions/current không phải
  */
 export const isPublicEndpoint = (url: string | undefined): boolean => {
   if (!url) return false;
-  return PUBLIC_ENDPOINTS.some((endpoint) => url.includes(endpoint));
+  
+  // Remove query params và trailing slash để so sánh
+  const cleanUrl = url.split('?')[0].replace(/\/$/, '');
+  
+  return PUBLIC_ENDPOINTS.some((endpoint) => {
+    // Match chính xác endpoint
+    if (cleanUrl === endpoint) return true;
+    // Match endpoint với trailing slash
+    if (cleanUrl === `${endpoint}/`) return true;
+    // Không match nếu có path sau endpoint (ví dụ: /sessions/current)
+    return false;
+  });
 };
 

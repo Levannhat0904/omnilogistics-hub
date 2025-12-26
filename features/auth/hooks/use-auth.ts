@@ -29,9 +29,11 @@ export const useLogin = () => {
 
       return data;
     },
-    onSuccess: () => {
+    onSuccess: async () => {
       // Invalidate queries nếu cần
       queryClient.invalidateQueries({ queryKey: ['auth'] });
+      // Invalidate và refetch session data ngay sau khi login thành công
+      queryClient.invalidateQueries({ queryKey: ['sessions', 'current'] });
       // Redirect to tabs after successful login
       router.replace('/(tabs)/(shipments)');
     },
@@ -63,6 +65,8 @@ export const useLogout = () => {
       }
     },
     onSuccess: () => {
+      // Remove session query trước khi clear tất cả
+      queryClient.removeQueries({ queryKey: ['sessions', 'current'] });
       // Clear tất cả queries
       queryClient.clear();
       // Redirect to login after logout
