@@ -1,10 +1,10 @@
 import { PropsWithChildren, useState } from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 
+import { Colors } from '@/shared/constants/theme';
 import { ThemedText } from '@shared/components/themed-text';
 import { ThemedView } from '@shared/components/themed-view';
 import { IconSymbol } from '@shared/components/ui/icon-symbol';
-import { Colors } from '@shared/constant/theme';
 import { useColorScheme } from '@shared/hooks/use-color-scheme';
 
 export function Collapsible({ children, title }: PropsWithChildren & { title: string }) {

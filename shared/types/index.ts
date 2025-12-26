@@ -1,5 +1,3 @@
-// Export all orders types
-// Example:
-// export type { Order } from './order';
-// export type { OrderStatus } from './orderStatus';
+// Export all shared types
+export * from './auth.types';
 

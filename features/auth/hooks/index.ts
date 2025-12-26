@@ -1,5 +1,5 @@
-// Export all orders hooks
-// Example:
-// export { useOrders } from './useOrders';
-// export { useOrderDetail } from './useOrderDetail';
+/**
+ * Export all auth hooks
+ */
+export { useLogin, useLogout } from './use-auth';
 

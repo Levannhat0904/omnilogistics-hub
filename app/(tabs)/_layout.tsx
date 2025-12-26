@@ -1,16 +1,18 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 
+import { Colors } from '@/shared/constants/theme';
+import { AuthGuard } from '@shared/components/auth-guard';
 import { HapticTab } from '@shared/components/haptic-tab';
 import { IconSymbol } from '@shared/components/ui/icon-symbol';
-import { Colors } from '@shared/constant/theme';
 import { useColorScheme } from '@shared/hooks/use-color-scheme';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
 
   return (
-    <Tabs
+    <AuthGuard>
+      <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
@@ -48,5 +50,6 @@ export default function TabLayout() {
         }}
       />
     </Tabs>
+    </AuthGuard>
   );
 }
