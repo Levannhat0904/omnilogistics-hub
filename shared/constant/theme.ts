@@ -4,26 +4,40 @@
  */
 
 import { Platform } from 'react-native';
+import { PrimaryColors, StatusColors } from './colors';
 
-const tintColorLight = '#0a7ea4';
-const tintColorDark = '#fff';
+// Using purple theme from colors.ts
+const tintColorLight = PrimaryColors.primary; // '#7c3aed' - Purple
+const tintColorDark = PrimaryColors.primary; // '#7c3aed' - Purple
 
 export const Colors = {
   light: {
-    text: '#11181C',
-    background: '#fff',
+    text: '#0f172a', // foreground
+    background: '#f1f3f6', // background
     tint: tintColorLight,
-    icon: '#687076',
-    tabIconDefault: '#687076',
+    icon: '#64748b', // muted-foreground
+    tabIconDefault: '#64748b',
     tabIconSelected: tintColorLight,
+    // Additional colors from theme
+    primary: PrimaryColors.primary,
+    success: StatusColors.success,
+    warning: StatusColors.warning,
+    info: StatusColors.info,
+    destructive: StatusColors.destructive,
   },
   dark: {
-    text: '#ECEDEE',
-    background: '#151718',
+    text: '#f8fafc', // foreground
+    background: '#0f172a', // background
     tint: tintColorDark,
-    icon: '#9BA1A6',
-    tabIconDefault: '#9BA1A6',
+    icon: '#94a3b8', // muted-foreground
+    tabIconDefault: '#94a3b8',
     tabIconSelected: tintColorDark,
+    // Additional colors from theme
+    primary: PrimaryColors.primary,
+    success: StatusColors.success,
+    warning: StatusColors.warning,
+    info: StatusColors.info,
+    destructive: StatusColors.destructive,
   },
 };
 
